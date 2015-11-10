@@ -1,25 +1,76 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PickPhoto" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick Photo Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgh-K2-THD">
+                                <rect key="frame" x="88" y="83" width="199" height="56"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2qw-Hq-AJM">
+                                <rect key="frame" x="53" y="190" width="268" height="210"/>
+                                <animations/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a photo here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyi-Xn-LBm">
+                                <rect key="frame" x="53" y="414" width="268" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9bh-sJ-zcU">
+                                <rect key="frame" x="0.0" y="443" width="375" height="216"/>
+                                <animations/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="UR4-He-5uc"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9bh-sJ-zcU" firstAttribute="top" secondItem="kyi-Xn-LBm" secondAttribute="bottom" constant="8" symbolic="YES" id="4bI-4y-rUd"/>
+                            <constraint firstItem="Pgh-K2-THD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8fk-md-4oT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9bh-sJ-zcU" secondAttribute="bottom" constant="8" symbolic="YES" id="H2f-k8-jd3"/>
+                            <constraint firstItem="kyi-Xn-LBm" firstAttribute="leading" secondItem="2qw-Hq-AJM" secondAttribute="leading" id="Khr-fd-T49"/>
+                            <constraint firstItem="9bh-sJ-zcU" firstAttribute="centerX" secondItem="2qw-Hq-AJM" secondAttribute="centerX" id="NYP-dG-qho"/>
+                            <constraint firstItem="Pgh-K2-THD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="63" id="PEv-fB-4CR"/>
+                            <constraint firstItem="2qw-Hq-AJM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="37" id="PyM-Bd-hog"/>
+                            <constraint firstItem="2qw-Hq-AJM" firstAttribute="centerX" secondItem="Pgh-K2-THD" secondAttribute="centerX" id="f7t-ec-dLh"/>
+                            <constraint firstItem="kyi-Xn-LBm" firstAttribute="trailing" secondItem="2qw-Hq-AJM" secondAttribute="trailing" id="hZ4-H8-JYB"/>
+                            <constraint firstItem="9bh-sJ-zcU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ogH-k5-ZsJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Pgh-K2-THD" secondAttribute="bottom" constant="528" id="sfz-Xc-3Pp"/>
+                            <constraint firstItem="2qw-Hq-AJM" firstAttribute="top" secondItem="Pgh-K2-THD" secondAttribute="bottom" constant="51" id="xXZ-V1-3tX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2qw-Hq-AJM" secondAttribute="bottom" constant="267" id="zDQ-0J-Mcj"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="imageView" destination="2qw-Hq-AJM" id="EBq-1H-vup"/>
+                        <outlet property="infoLabel" destination="kyi-Xn-LBm" id="A2m-h3-8gr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="438.5" y="389.5"/>
         </scene>
     </scenes>
 </document>
